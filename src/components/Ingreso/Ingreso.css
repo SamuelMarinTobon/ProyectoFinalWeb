@@ -5,6 +5,8 @@
     height: 450px;
     align-items: center;
     border: black 1px solid;
+    box-shadow: 5px 2.5px 2.5px black;
+    background-color:whitesmoke;
     
     
 
@@ -12,9 +14,16 @@
 .ContenedorNombreBanco{
     display: flex;  
     justify-content: center;
-    width: 70%;
+    width: 100%;
     margin-top: 40px;
     font-family: Arial, Helvetica, sans-serif;
+    background-color:mediumblue;
+    
+    border:1px solid black;
+
+}
+.Estebanquito{
+    color: white;
 }
 
 .ContenedorNombreIngreso{

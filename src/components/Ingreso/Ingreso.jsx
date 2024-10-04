@@ -5,7 +5,7 @@ export default function Ingreso() {
   return (
     <div className='Container'>
       <div className='ContenedorNombreBanco'>
-        <h1><strong>ESTEBANQUITO</strong></h1>
+        <h1 className='Estebanquito'>ESTEBANQUITO</h1>
       </div>
       <div className='ContenedorNombreIngreso'>
         <h1>INGRESO</h1>
