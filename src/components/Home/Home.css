@@ -1,0 +1,14 @@
+.ContainerHome{
+    display: flex;
+    background-color: brown;
+}
+
+.ContainerNombreBancoHome{
+    display: flex;
+    background-color: aqua;
+    width: 100%;
+
+}
+.NombreBancoHome{
+    color: black;
+}

@@ -3,27 +3,27 @@ import './Ingreso.css';
 
 export default function Ingreso() {
   return (
-    <div className='Container'>
-      <div className='ContenedorNombreBanco'>
-        <h1 className='Estebanquito'>ESTEBANQUITO</h1>
+    <div className='ContainerIngreso'>
+      <div className='ContenedorNombreBancoIngreso'>
+        <h1 className='EstebanquitoIngreso'>ESTEBANQUITO</h1>
       </div>
       <div className='ContenedorNombreIngreso'>
         <h1>INGRESO</h1>
       </div>
-      <div className='ContenedorUsuario'>
-        <div className='EtiquetaInput'>
+      <div className='ContenedorUsuarioIngreso'>
+        <div className='EtiquetaInputIngreso'>
           <h5>Usuario:</h5>
         </div>
-        <input type='text' className='InputUsuario' />
+        <input type='text' className='InputUsuarioIngreso' />
       </div>
 
-      <div className='ContenedorContraseña'>
-        <div className='EtiquetaInput'>
+      <div className='ContenedorContraseñaIngreso'>
+        <div className='EtiquetaInputIngreso'>
           <h5>Contraseña:</h5>
         </div>
-        <input type='text' className='InputContraseña' />
+        <input type='text' className='InputContraseñaIngreso' />
       </div>
-      <div className='ContenedorIrRegistro'>
+      <div className='ContenedorIrRegistroDesdeIngreso'>
         <a href=''>Registro</a>
       </div>
       <div className='ContenedorBotonIngreso'>

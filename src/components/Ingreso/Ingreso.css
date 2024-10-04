@@ -1,4 +1,4 @@
-.Container{
+.ContainerIngreso{
     display: flex;
     flex-direction: column;
     width: 30%;
@@ -11,7 +11,7 @@
     
 
 }
-.ContenedorNombreBanco{
+.ContenedorNombreBancoIngreso{
     display: flex;  
     justify-content: center;
     width: 100%;
@@ -22,7 +22,7 @@
     border:1px solid black;
 
 }
-.Estebanquito{
+.EstebanquitoIngreso{
     color: white;
 }
 
@@ -35,7 +35,7 @@
     margin-top: 24px;
     font-family: Arial;
 }
-.ContenedorUsuario{
+.ContenedorUsuarioIngreso{
     width: 70%;
     height: 40px;
     display: flex;  
@@ -44,11 +44,11 @@
     align-items: center;
     
 }
-.InputUsuario{
+.InputUsuarioIngreso{
     height: 20px;
     width: 65%;
 }
-.ContenedorContraseña{
+.ContenedorContraseñaIngreso{
     width: 70%;
     height: 40px;
     display: flex;  
@@ -57,17 +57,17 @@
     margin-bottom: 5px;
    
 }
-.InputContraseña{
+.InputContraseñaIngreso{
     height: 20px;
     width: 65%;
 }
-.EtiquetaInput{
+.EtiquetaInputIngreso{
     display: flex;
     width: 20%;
     justify-content: end;
     font-family: Arial;
 }
-.ContenedorIrRegistro{
+.ContenedorIrRegistroDesdeIngreso{
     width: 65%;
     display: flex;  
     justify-content: end;
