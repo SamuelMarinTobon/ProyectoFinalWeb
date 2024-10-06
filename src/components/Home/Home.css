@@ -1,24 +1,27 @@
 .Container123{
+    width: 100%;
     display: flex;
     flex: 1;
+    flex-direction: row;
+    background-color: rgb(242, 185, 80);
 }
 
 .ContainerHome{
     display: flex;
-    background-color: rgb(250, 226, 182);
+    background-color:rgb(32, 30, 30);
+    justify-content: center;
     width: 20%;
-    height: 580px;
+    height: 280px;
 }
-.logo1{
-    margin-top: 30px;
+.logo2{
     display: flex; 
-    width: 200px;
-    height: aut;
+    margin-top: 10px;
+    width: 250px;
+    height: 150px;
 }
 
 .ContainerHomeResultados{
     display: flex;
-    background-color: aqua;
     width: 80%;
     height: 580px;
 
