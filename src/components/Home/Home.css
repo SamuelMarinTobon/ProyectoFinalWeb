@@ -1,14 +1,25 @@
+.Container123{
+    display: flex;
+    flex: 1;
+}
+
 .ContainerHome{
     display: flex;
-    background-color: brown;
+    background-color: rgb(250, 226, 182);
+    width: 20%;
+    height: 580px;
+}
+.logo1{
+    margin-top: 30px;
+    display: flex; 
+    width: 200px;
+    height: aut;
 }
 
-.ContainerNombreBancoHome{
+.ContainerHomeResultados{
     display: flex;
     background-color: aqua;
-    width: 100%;
+    width: 80%;
+    height: 580px;
 
-}
-.NombreBancoHome{
-    color: black;
 }

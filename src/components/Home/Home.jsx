@@ -3,10 +3,9 @@ import './Home.css';
 
 export default function Home() {
   return (
-    <div className='ContainerHome'>
-      <div className='ContainerNombreBancoHome'>
-        <h1 className='NombreBancoHome'>ESTEBANQUITO</h1>
-      </div>
+    <div className='Container'>
+      <div className='ContainerHome'></div>
+      <div className='ContainerHome'></div>
     </div>
   );
 }
