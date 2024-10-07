@@ -1,8 +1,8 @@
-.ContainerHome{
+/*.ContainerHome{
     display: flex;
     background-color: brown;
 }
-
+/*
 .ContainerNombreBancoHome{
     display: flex;
     background-color: aqua;
@@ -11,4 +11,116 @@
 }
 .NombreBancoHome{
     color: black;
+}*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: #F4F7F6;
+    margin-left: -32px;
+    margin-right: -32px;
+    /*F4F7F6*/
+  }
+  
+  .home-header {
+    padding-left: 0%;
+    display: flex;
+    /*border-radius: 10px;*/
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1C1C1C; 
+    margin-left: 0px;
+    margin-right: -0px;
+    margin-top: -35px;
+  }
+  
+  .home-logo {
+    width: 80px;
+  }
+  
+  .home-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    
+  }
+  
+  .home-text {
+    flex: 35%;
+  }
+  
+  .home-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: Cambria;
+  }
+  
+  .home-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+   font-family: Cambria; 
+  }
+  
+  .home-buttons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .btn-create-account, .btn-login{
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .btn-create-account {
+    background-color: #FF8C00;
+    color: #FFFFFF;
+  }
+  
+  .btn-login {
+    background-color: #4A90E2;
+    color: #FFFFFF;
+  }
+  .btn-about-us{
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #1C1C1C;
+    color: #eabe89;
+    margin-left: 37%;
+  }  
+  
+  .btn-create-account:hover, .btn-login:hover,.btn-about-us:hover {
+    opacity: 0.8;
+  }
+  
+
+  .home-fondo {
+    flex: 65%;
+  }
+  
+  .home-fondo img {
+    width: 100%;
+    object-fit: contain;    
+    border-radius: 10px;
+  }
+@media screen and (max-width: 800px) {
+    .home-content{
+        flex-direction: column;
+    }
 }
