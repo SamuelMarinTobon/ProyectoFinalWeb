@@ -1,33 +1,20 @@
 import React from 'react';
+import logo from '../../assets/logo.png';
 import './Ingreso.css';
 
 export default function Ingreso() {
   return (
-    <div className='ContainerIngreso'>
-      <div className='ContenedorNombreBancoIngreso'>
-        <h1 className='EstebanquitoIngreso'>ESTEBANQUITO</h1>
-      </div>
-      <div className='ContenedorNombreIngreso'>
-        <h1>INGRESO</h1>
-      </div>
-      <div className='ContenedorUsuarioIngreso'>
-        <div className='EtiquetaInputIngreso'>
-          <h5>Usuario:</h5>
-        </div>
-        <input type='text' className='InputUsuarioIngreso' />
-      </div>
-
-      <div className='ContenedorContraseñaIngreso'>
-        <div className='EtiquetaInputIngreso'>
-          <h5>Contraseña:</h5>
-        </div>
-        <input type='text' className='InputContraseñaIngreso' />
-      </div>
-      <div className='ContenedorIrRegistroDesdeIngreso'>
-        <a href=''>Registro</a>
-      </div>
-      <div className='ContenedorBotonIngreso'>
-        <button className='BotonIngresar'>Ingresar</button>
+    <div className='principal'>
+      <div className='ContainerIngreso'>
+        <img src={logo} alt='Logo' className='logo' />
+        <h1 className='EstebanquitoIngreso'>Iniciar sesion</h1>
+        <input type='text' className='InputIngreso' placeholder='Usuario' />
+        <input type='text' className='InputIngreso' placeholder='Contraseña' />
+        <button className='BotonIngresara'>Ingresar</button>
+        <p>
+          ¿No tienes Cuenta?
+          <a href=''>Registro</a>
+        </p>
       </div>
     </div>
   );

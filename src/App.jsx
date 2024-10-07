@@ -1,6 +1,7 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
 import Ingreso from './components/Ingreso/Ingreso';
-import './App.css';
-import Home from './components/Home/Home';
 
 function App() {
   return (
@@ -9,6 +10,12 @@ function App() {
         <Home />
       </div>
     </>
+    <Router>
+      <Routes>
+        <Route path='/login' element={<Ingreso />} />
+  
+      </Routes>
+    </Router>
   );
 }
 
