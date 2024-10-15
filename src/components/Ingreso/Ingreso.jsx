@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo1.png';
 import './Ingreso.css';
 
 export default function Ingreso() {
