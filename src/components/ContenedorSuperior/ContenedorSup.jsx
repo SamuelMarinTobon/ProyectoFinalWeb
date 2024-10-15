@@ -1,8 +1,10 @@
 import React from 'react';
 import './ContenedorSup.css'
 import Logo from '../../assets/logo5.png';
+import { useNavigate } from 'react-router';
 
 const TopContainer = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <div className='contenedorLogoInfo'>
@@ -19,10 +21,18 @@ const TopContainer = () => {
         </div>
       </div>
       <div className='contenedorBotonesContSup'>
-        <button className='botonContSup'>Inicio</button>
-        <button className='botonContSup'>Transferencias</button>
-        <button className='botonContSup'>Préstamos</button>
-        <button className='botonContSup'>Reportes</button>
+        <button onClick={() => navigate('/inicio')} className='botonContSup'>
+          Inicio
+        </button>
+        <button onClick={() => navigate('/transferencias')} className='botonContSup'>
+          Transferencias
+        </button>
+        <button onClick={() => navigate('/prestamos')} className='botonContSup'>
+          Prestamos
+        </button>
+        <button onClick={() => navigate('/reportes')} className='botonContSup'>
+          Reportes
+        </button>
       </div>
     </div>
   );

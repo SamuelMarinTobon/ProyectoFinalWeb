@@ -1,8 +1,10 @@
 import React from 'react';
 import logo from '../../assets/logo1.png';
 import './Ingreso.css';
+import { useNavigate } from 'react-router';
 
 export default function Ingreso() {
+   const navigate = useNavigate();
   return (
     <div className='principal'>
       <div className='ContainerIngreso'>
@@ -13,7 +15,9 @@ export default function Ingreso() {
         <button className='BotonIngresara'>Ingresar</button>
         <p>
           ¿No tienes Cuenta?
-          <a href=''>Registro</a>
+          <a href='' onClick={() => navigate('/registro')}>
+            Registro
+          </a>
         </p>
       </div>
     </div>

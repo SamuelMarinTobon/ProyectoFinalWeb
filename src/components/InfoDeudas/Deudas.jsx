@@ -3,7 +3,6 @@ import './Deudas.css';
 import TopContainer from '../ContenedorSuperior/ContenedorSup';
 
 const Deudas = () => { 
-  const userName = "Juan Pérez"; // Nombre del cliente
   const deudas = [
     {
       id: 1,

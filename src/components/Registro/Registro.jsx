@@ -1,8 +1,9 @@
 import React from 'react';
 import logo from '../../assets/logo.png';
 import './Registro.css'; 
-
+import { useNavigate } from 'react-router';
 export default function Registro() {
+  const navigate = useNavigate();
   return (
     <div className='principal'>
       <div className='ContainerRegistro'>
@@ -15,7 +16,9 @@ export default function Registro() {
         <button className='BotonRegistrar'>Registrar</button>
         <p>
           ¿Ya tienes Cuenta?
-          <a href=''>Iniciar Sesión</a>
+          <a href='' onClick={() => navigate('/login')}>
+            Iniciar Sesión
+          </a>
         </p>
       </div>
     </div>
