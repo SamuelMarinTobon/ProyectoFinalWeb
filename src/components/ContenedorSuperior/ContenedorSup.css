@@ -57,7 +57,7 @@
 }
 .contenedorBotonesContSup {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color:rgb(242, 185, 80);
     padding: 10px ;
 }
@@ -67,7 +67,33 @@
     padding: 10px;
     background-color: rgb(242, 185, 80);
     cursor: pointer;
-    text-transform: uppercase;
     border: #fff;
+}
+
+.botonContSupMenu {
+    position: relative; 
+}
+
+.menuEmergente {
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.botonContSupMenu:hover .menuEmergente {
+    display: block; 
+}
+
+.botonMenuEmergente {
+    padding: 10px;
+    background-color: white;
+    border: none;
+    text-align: left;
+    margin-bottom: 5px;
+    cursor: pointer;
 }
 

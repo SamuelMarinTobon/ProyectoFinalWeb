@@ -21,18 +21,48 @@ const TopContainer = () => {
         </div>
       </div>
       <div className='contenedorBotonesContSup'>
-        <button onClick={() => navigate('/inicio')} className='botonContSup'>
-          Inicio
-        </button>
-        <button onClick={() => navigate('/transferencias')} className='botonContSup'>
-          Transferencias
-        </button>
-        <button onClick={() => navigate('/prestamos')} className='botonContSup'>
-          Prestamos
-        </button>
-        <button onClick={() => navigate('/reportes')} className='botonContSup'>
-          Reportes
-        </button>
+        <div className='botonContSupMenu'>
+          <button onClick={() => navigate('/inicio')} className='botonContSup'>
+            INICIO
+          </button>
+        </div>
+
+        <div className='botonContSupMenu'>
+          <button onClick={() => navigate('/transferencias')} className='botonContSup'>
+            TRANSFERENCIAS
+          </button>
+          <div className='menuEmergente'>
+            <button onClick={() => navigate('/opcion')} className='botonMenuEmergente'>
+              Transferir
+            </button>
+            <button onClick={() => navigate('/opciom')} className='botonMenuEmergente'>
+              Depositar
+            </button>
+            <button onClick={() => navigate('/opcion')} className='botonMenuEmergente'>
+              Retirar
+            </button>
+          </div>
+        </div>
+
+        <div className='botonContSupMenu'>
+          <button onClick={() => navigate('/prestamos')} className='botonContSup'>
+            PRESTAMOS
+          </button>
+          <div className='menuEmergente'>
+            <button onClick={() => navigate('/opcion')} className='botonMenuEmergente'>
+              Solicitar
+            </button>
+            <button onClick={() => navigate('/deudas')} className='botonMenuEmergente'>
+              Consultar
+            </button>
+          </div>
+        </div>
+
+        <div className='botonContSupMenu'>
+          <button onClick={() => navigate('/reportes')} className='botonContSup'>
+            REPORTES
+          </button>
+        </div>
       </div>
     </div>
   );
