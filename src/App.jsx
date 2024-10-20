@@ -4,6 +4,8 @@ import Home from './components/Home/Home';
 import Ingreso from './components/Ingreso/Ingreso';
 import Deudas from './components/InfoDeudas/Deudas';
 import Registro from './components/Registro/Registro';
+import Prestamos from './components/Prestamo/Prestamo';
+import Retiros from './components/Retiro/Retiro';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path='/home' element={<Home />} />
         <Route path='/deudas' element={<Deudas />} />
         <Route path='/registro' element={<Registro />} />
+        <Route path='/prestamos' element={<Prestamos />} />
+        <Route path='/retiros' element={<Retiros />} />
       </Routes>
     </Router>
   );
