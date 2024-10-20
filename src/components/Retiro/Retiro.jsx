@@ -5,6 +5,7 @@ import TopContainer from '../ContenedorSuperior/ContenedorSup';
 
 export default function InterfazRetiros() {
   const [monto, setMonto] = useState('');
+  const movimientos = [{ fecha: '2024-01-10', tipo: 'Retiro', monto: 1000, descripcion: 'Salario' }];
 
   return (
     <div>
@@ -25,6 +26,24 @@ export default function InterfazRetiros() {
           <button type='submit' className='BotonTransaccion'>
             Realizar
           </button>
+        </div>
+        <div className='HistorialRetiros'>
+          <h2 className='tituloHistorialRetiros'>Historial de Depositos</h2>
+          {movimientos.map((movimiento, index) => (
+            <div key={index} className='ElementoHistorialRetiro'>
+              <div className='DetalleMovimientoRetiro'>
+                <p className='DetalleMovimientoRetiro'>
+                  <strong>{movimiento.tipo}:</strong> {movimiento.descripcion}
+                </p>
+                <p className='DetalleMovimientoRetiro'>
+                  <strong>Fecha:</strong> {movimiento.fecha}
+                </p>
+                <p className='DetalleMovimientoRetiro'>
+                  <strong>Monto:</strong> ${movimiento.monto}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

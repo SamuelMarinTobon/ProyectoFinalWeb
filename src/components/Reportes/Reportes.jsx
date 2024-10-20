@@ -26,7 +26,7 @@ const Reportes = () => {
             <p className='textoDescripcionResumen'>Histórico de ingresos acumulados.</p>
           </div>
           <div className='contenedorResumen'>
-            <h2 className='textoResumen'>EGRESADOS TOTALES</h2>
+            <h2 className='textoResumen'>EGRESOS TOTALES</h2>
             <p className='textoEgresos'>${egresosTotales}</p>
             <p className='textoDescripcionResumen'>Histórico de todos los egresos.</p>
           </div>

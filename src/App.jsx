@@ -8,6 +8,7 @@ import Prestamos from './components/Prestamo/Prestamo';
 import Retiros from './components/Retiro/Retiro';
 import TopContainer from './components/ContenedorSuperior/ContenedorSup';
 import Reportes from './components/Reportes/Reportes';
+import Deposito from './components/Deposito/Deposito';
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
         <Route path='/registro' element={<Registro />} />
         <Route path='/prestamos' element={<Prestamos />} />
         <Route path='/retiros' element={<Retiros />} />
-        <Route path='/topcontainer' element={<TopContainer />} />
+        <Route path='/' element={<TopContainer />} />
         <Route path='/reportes' element={<Reportes />} />
+        <Route path='/deposito' element={<Deposito />} />
       </Routes>
     </Router>
   );
