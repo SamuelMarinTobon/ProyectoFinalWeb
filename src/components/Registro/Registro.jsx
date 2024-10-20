@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../../assets/logo5.png';
-import './Registro.css'; 
 import { useNavigate } from 'react-router';
+import logo from '../../assets/logo5.png';
+import './Registro.css';
 export default function Registro() {
   const navigate = useNavigate();
   return (

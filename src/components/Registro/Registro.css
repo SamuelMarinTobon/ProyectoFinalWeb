@@ -46,24 +46,12 @@
     background-color: rgb(242, 185, 80);
     font-size: 15px;
     font-weight: bold;
-    border-radius: 5px; /* Bordes redondeados para el botón */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin-bottom: 10px;
   }
   
-  .BotonRegistrar:hover {
-    background-color: rgb(220, 165, 70); 
-  }
   
-  p {
-    margin-top: 15px; /* Espaciado superior para el párrafo */
-  }
   
-  a {
-    color: rgb(242, 185, 80); /* Color del enlace */
-    text-decoration: none; /* Sin subrayado */
-  }
-  
-  a:hover {
-    text-decoration: underline; /* Subrayado al pasar el mouse */
-  }
+ 
   
