@@ -31,22 +31,22 @@ const Deudas = () => {
 
   return (
     <div>
-      <TopContainer/>
-      <div className='deuda-container'>
-      
-        <div className='deuda-list'>
+      <TopContainer />
+      <div className='contenedorDeudas'>
+        <h1 className='tituloResumen'>PAGAR DEUDAS</h1>
+        <div className='listaDeuda'>
           {deudas.map((deuda) => (
-            <div key={deuda.id} className='deuda-item'>
+            <div key={deuda.id} className='deudaItem'>
               <p>
                 <strong>Tipo de Crédito:</strong> {deuda.type}
               </p>
               <p>
                 <strong>Valor que Debes:</strong> ${deuda.amount}
               </p>
-              <button onClick={() => PagarCuota(deuda.id)} className='btn-pay-installment'>
+              <button onClick={() => PagarCuota(deuda.id)} className='btnPagar'>
                 Pagar Cuota
               </button>
-              <button onClick={() => PagarTotal(deuda.id)} className='btn-pay-total'>
+              <button onClick={() => PagarTotal(deuda.id)} className='btnPagar'>
                 Pagar Valor Total
               </button>
             </div>
