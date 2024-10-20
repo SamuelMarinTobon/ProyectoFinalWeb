@@ -60,6 +60,8 @@
     justify-content: space-around;
     background-color:rgb(242, 185, 80);
     padding: 10px ;
+    box-shadow: 0 1px 4px;
+    
 }
 
 .botonContSup {
@@ -68,6 +70,7 @@
     background-color: rgb(242, 185, 80);
     cursor: pointer;
     border: #fff;
+    
 }
 
 .botonContSupMenu {
@@ -82,6 +85,7 @@
     background-color: white;
     padding: 10px;
     border-radius: 5px;
+    
 }
 
 .botonContSupMenu:hover .menuEmergente {

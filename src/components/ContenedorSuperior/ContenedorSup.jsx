@@ -28,9 +28,7 @@ const TopContainer = () => {
         </div>
 
         <div className='botonContSupMenu'>
-          <button onClick={() => navigate('/transferencias')} className='botonContSup'>
-            TRANSFERENCIAS
-          </button>
+          <button className='botonContSup'>TRANSFERENCIAS</button>
           <div className='menuEmergente'>
             <button onClick={() => navigate('/opcion')} className='botonMenuEmergente'>
               Transferir
@@ -38,18 +36,16 @@ const TopContainer = () => {
             <button onClick={() => navigate('/opciom')} className='botonMenuEmergente'>
               Depositar
             </button>
-            <button onClick={() => navigate('/opcion')} className='botonMenuEmergente'>
+            <button onClick={() => navigate('/retiros')} className='botonMenuEmergente'>
               Retirar
             </button>
           </div>
         </div>
 
         <div className='botonContSupMenu'>
-          <button onClick={() => navigate('/prestamos')} className='botonContSup'>
-            PRESTAMOS
-          </button>
+          <button className='botonContSup'>PRESTAMOS</button>
           <div className='menuEmergente'>
-            <button onClick={() => navigate('/opcion')} className='botonMenuEmergente'>
+            <button onClick={() => navigate('/prestamos')} className='botonMenuEmergente'>
               Solicitar
             </button>
             <button onClick={() => navigate('/deudas')} className='botonMenuEmergente'>
