@@ -1,8 +1,8 @@
 import React from 'react';
 import './Deudas.css'; 
+import TopContainer from '../ContenedorSuperior/ContenedorSup';
 
 const Deudas = () => { 
-  const userName = "Juan Pérez"; // Nombre del cliente
   const deudas = [
     {
       id: 1,
@@ -30,18 +30,28 @@ const Deudas = () => {
   };
 
   return (
-    <div className="deuda-container">
-      <h1>Bienvenido, {userName}</h1>
-      <h2>Tus Deudas</h2>
-      <div className="deuda-list">
-        {deudas.map(deuda => (
-          <div key={deuda.id} className="deuda-item">
-            <p><strong>Tipo de Crédito:</strong> {deuda.type}</p>
-            <p><strong>Valor que Debes:</strong> ${deuda.amount}</p>
-            <button onClick={() => PagarCuota(deuda.id)} className="btn-pay-installment">Pagar Cuota</button>
-            <button onClick={() => PagarTotal(deuda.id)} className="btn-pay-total">Pagar Valor Total</button> 
-          </div>
-        ))}
+    <div>
+      <TopContainer/>
+      <div className='deuda-container'>
+      
+        <div className='deuda-list'>
+          {deudas.map((deuda) => (
+            <div key={deuda.id} className='deuda-item'>
+              <p>
+                <strong>Tipo de Crédito:</strong> {deuda.type}
+              </p>
+              <p>
+                <strong>Valor que Debes:</strong> ${deuda.amount}
+              </p>
+              <button onClick={() => PagarCuota(deuda.id)} className='btn-pay-installment'>
+                Pagar Cuota
+              </button>
+              <button onClick={() => PagarTotal(deuda.id)} className='btn-pay-total'>
+                Pagar Valor Total
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

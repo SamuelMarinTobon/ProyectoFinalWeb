@@ -1,12 +1,13 @@
 import React from 'react';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo5.png';
 import './Registro.css'; 
-
+import { useNavigate } from 'react-router';
 export default function Registro() {
+  const navigate = useNavigate();
   return (
     <div className='principal'>
       <div className='ContainerRegistro'>
-        <img src={logo} alt='Logo' className='logo' />
+        <img src={logo} alt='Logo' className='logoRegistro' />
         <h1 className='EstebanquitoRegistro'>Crear Cuenta</h1>
         <input type='text' className='InputRegistro' placeholder='Nombre de Usuario' />
         <input type='email' className='InputRegistro' placeholder='Correo Electrónico' />
@@ -15,7 +16,9 @@ export default function Registro() {
         <button className='BotonRegistrar'>Registrar</button>
         <p>
           ¿Ya tienes Cuenta?
-          <a href=''>Iniciar Sesión</a>
+          <a href='' onClick={() => navigate('/login')}>
+            Iniciar Sesión
+          </a>
         </p>
       </div>
     </div>

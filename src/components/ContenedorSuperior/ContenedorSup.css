@@ -1,0 +1,99 @@
+.contenedorLogoInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 15px;
+}
+
+.contenedorLogo {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.contenedorSupLogo {
+  display: flex;
+  width: 80px;
+}
+
+.contenedorInfoPrincipal{
+    display: flex;
+    justify-content: space-between;
+}
+.contenedorInfo2{
+    padding: 10px;
+    text-align: left;
+    flex: 1;
+}
+.contenedorInfo {
+    padding: 10px;
+    text-align: right;
+    flex: 1;
+
+}
+
+.nombre {
+    margin: 0;
+    font-weight: bold;
+    color:white;
+    margin: 0;
+}
+
+.balance {
+    margin: 0;
+    color: white;
+}
+.tituloTC{
+    margin: 0;
+    font-weight: bold;
+    color:  white;
+    margin: 0;
+}
+.tipoCuenta{
+    margin: 0;
+    color: white;
+}
+.contenedorBotonesContSup {
+    display: flex;
+    justify-content: space-around;
+    background-color:rgb(242, 185, 80);
+    padding: 10px ;
+}
+
+.botonContSup {
+    flex: 1;
+    padding: 10px;
+    background-color: rgb(242, 185, 80);
+    cursor: pointer;
+    border: #fff;
+}
+
+.botonContSupMenu {
+    position: relative; 
+}
+
+.menuEmergente {
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.botonContSupMenu:hover .menuEmergente {
+    display: block; 
+}
+
+.botonMenuEmergente {
+    padding: 10px;
+    background-color: white;
+    border: none;
+    text-align: left;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
