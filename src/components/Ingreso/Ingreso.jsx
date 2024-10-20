@@ -1,10 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 import logo from '../../assets/logo5.png';
 import './Ingreso.css';
-import { useNavigate } from 'react-router';
 
 export default function Ingreso() {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <div className='principal'>
       <div className='ContainerIngreso'>
