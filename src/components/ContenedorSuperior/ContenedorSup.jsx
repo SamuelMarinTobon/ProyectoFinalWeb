@@ -30,7 +30,7 @@ const TopContainer = () => {
         <div className='botonContSupMenu'>
           <button className='botonContSup'>TRANSFERENCIAS</button>
           <div className='menuEmergente'>
-            <button onClick={() => navigate('/opcion')} className='botonMenuEmergente'>
+            <button onClick={() => navigate('/transferencia')} className='botonMenuEmergente'>
               Transferir
             </button>
             <button onClick={() => navigate('/deposito')} className='botonMenuEmergente'>

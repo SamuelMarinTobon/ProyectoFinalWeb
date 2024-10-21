@@ -1,0 +1,176 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  
+  .inicio-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #F4F7F6;
+  
+    }
+    
+    .inicio-header {
+      padding-left: 0%;
+      display: flex;
+      /*border-radius: 10px;*/
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #1C1C1C; 
+      margin-left: 0px;
+      margin-right: -0px;
+      
+    }
+    
+    .inicio-logo {
+      width: 80px;
+    }
+    
+    .inicio-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 60px;
+      flex: 1;
+    }
+    
+    .inicio-text {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 500px;
+      padding-right: 40px;
+    }
+  
+  
+    .inicio-text h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      font-family: Cambria;
+      color: #1C1C1C;
+    }
+    
+    .inicio-text p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      font-family: Cambria;
+      line-height: 1.6;
+      color: #333;
+    }
+    
+    .text-welcome {
+      display: flex;
+      gap: 20px;
+      color: #eabe89;
+    }
+    
+    .btn-create-account, .btn-login{
+      padding: 15px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    
+
+    .inicio-buttons {
+        display: flex;
+        gap: 20px;
+      }
+      
+    .btn-about-us {
+      padding: 15px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #1C1C1C;
+      color: #eabe89;
+      width: fit-content;
+      margin: 0 auto;
+    }
+    
+    .btn-about-us:hover {
+      opacity: 0.8;
+    }
+    
+  
+    .inicio-fondo {
+      flex: 1.5;
+    }
+    
+    .inicio-fondo img {
+      width: 100%;
+      object-fit: contain;    
+      border-radius: 10px;
+    }
+    @media screen and (max-width: 800px) {
+      .inicio-content {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+      }
+      .inicio-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+  
+  
+  
+  
+  /* Modal overlay: cubre toda la pantalla con un fondo semitransparente */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  }
+  
+  /* Modal content: el contenido del mensaje flotante */
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001; /* Asegura que esté por encima del overlay */
+    position: relative; /* Permite que los elementos internos usen su propio posicionamiento */
+  }
+  
+  /* Botón para cerrar el modal */
+  .btn-close-modal {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 4px;
+  }
+  
+  .btn-close-modal:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Esto impide que se cierre el modal cuando se hace clic dentro de él */
+  .modal-content {
+    position: relative;
+    z-index: 1001;
+  }
+  

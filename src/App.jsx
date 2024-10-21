@@ -9,6 +9,8 @@ import Retiros from './components/Retiro/Retiro';
 import TopContainer from './components/ContenedorSuperior/ContenedorSup';
 import Reportes from './components/Reportes/Reportes';
 import Deposito from './components/Deposito/Deposito';
+import Transferencia from './components/Transferencia/Transferencia';
+import Inicio from './components/Inicio/Inicio';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Route path='/' element={<TopContainer />} />
         <Route path='/reportes' element={<Reportes />} />
         <Route path='/deposito' element={<Deposito />} />
+        <Route path='/transferencia' element={<Transferencia />} />
+        <Route path='/inicio' element={<Inicio />} />
       </Routes>
     </Router>
   );
