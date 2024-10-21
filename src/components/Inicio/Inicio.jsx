@@ -4,6 +4,7 @@ import Fondo from '../../assets/fondo4.png';
 import Logo from '../../assets/logo4.png';
 import './inicio.css';
 import Sidebar from '../Sidebar/Sidebar';
+import TopContainer from '../ContenedorSuperior/ContenedorSup';
 
 const inicio = () => {
   const navigate = useNavigate();
@@ -21,15 +22,7 @@ const inicio = () => {
 
   return (
     <div className='inicio-container'>
-      <header className='inicio-header'>
-        <div className='inicio-logo'>
-          <img src={Logo} alt='SwiftM Logo' className='inicio-logo' />
-        </div>
-        <div className='text-welcome'>
-          <h1>Bienvenido, Samuel Marin Tobon</h1>
-        </div>
-       {/* <Sidebar className='sidebar'/>*/}
-      </header>
+      <TopContainer />
 
       <div className='inicio-content'>
         <div className='inicio-text'>
@@ -56,9 +49,9 @@ const inicio = () => {
           <div className='modal-content' onClick={(e) => e.stopPropagation()}>
             <h2>Sobre Nosotros</h2>
             <p>
-              En SMR, nos comprometemos a ofrecerte servicios financieros con los más altos estándares de seguridad
-              y confianza. Estamos aquí para ayudarte a alcanzar tus metas financieras con transparencia y dedicación. 
-              Da el paso y hazte parte de nuestra familia.
+              En SMR, nos comprometemos a ofrecerte servicios financieros con los más altos estándares de seguridad y
+              confianza. Estamos aquí para ayudarte a alcanzar tus metas financieras con transparencia y dedicación. Da
+              el paso y hazte parte de nuestra familia.
             </p>
             <button onClick={closeModal} className='btn-close-modal'>
               Cerrar

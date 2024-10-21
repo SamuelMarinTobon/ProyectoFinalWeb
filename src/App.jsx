@@ -17,12 +17,12 @@ function App() {
     <Router>
       <Routes>
         <Route path='/login' element={<Ingreso />} />
-        <Route path='/home' element={<Home />} />
+        <Route path='/' element={<Home />} />
         <Route path='/deudas' element={<Deudas />} />
         <Route path='/registro' element={<Registro />} />
         <Route path='/prestamos' element={<Prestamos />} />
         <Route path='/retiros' element={<Retiros />} />
-        <Route path='/' element={<TopContainer />} />
+        <Route path='/topcontainer' element={<TopContainer />} />
         <Route path='/reportes' element={<Reportes />} />
         <Route path='/deposito' element={<Deposito />} />
         <Route path='/transferencia' element={<Transferencia />} />

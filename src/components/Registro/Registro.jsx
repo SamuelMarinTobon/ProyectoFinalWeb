@@ -11,10 +11,12 @@ export default function Registro() {
         <h1 className='EstebanquitoRegistro'>Crear Cuenta</h1>
         <input type='text' className='InputRegistro' placeholder='Nombre de Usuario' />
         <input type='email' className='InputRegistro' placeholder='Correo Electrónico' />
+        <input type='telefono' className='InputRegistro' placeholder='Telefono' />
+        <input type='tipocuenta' className='InputRegistro' placeholder='Tipo de Cuenta' />
         <input type='password' className='InputRegistro' placeholder='Contraseña' />
         <input type='password' className='InputRegistro' placeholder='Confirmar Contraseña' />
         <button className='BotonRegistrar'>Registrar</button>
-        <p>
+        <p className='enlaceIrLogin'>
           ¿Ya tienes Cuenta?
           <a href='' onClick={() => navigate('/login')}>
             Iniciar Sesión
