@@ -12,7 +12,7 @@ export default function Ingreso() {
         <h1 className='EstebanquitoIngreso'>Iniciar sesion</h1>
         <input type='text' className='InputIngreso' placeholder='Usuario' />
         <input type='text' className='InputIngreso' placeholder='Contraseña' />
-        <button className='BotonIngresara' onClick={() => navigate('/topcontainer')}>
+        <button className='BotonIngresara' onClick={() => navigate('/inicio')}>
           Ingresar
         </button>
         <p>
