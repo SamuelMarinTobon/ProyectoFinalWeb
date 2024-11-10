@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import logo from '../../assets/logo5.png';
-import './Retiro.css';
 import TopContainer from '../ContenedorSuperior/ContenedorSup';
+import './Retiro.css';
 
 export default function InterfazRetiros() {
+  const location = useLocation();
+  const { nombre, tipo, numero_cuenta } = location.state || {};
+
   const [monto, setMonto] = useState('');
   const movimientos = [{ fecha: '2024-01-10', tipo: 'Retiro', monto: 1000, descripcion: 'Salario' }];
 
   return (
     <div>
-      <TopContainer />
+      <TopContainer nombre={nombre} tipo={tipo} numero_cuenta={numero_cuenta} />
 
       <div className='principalRetiros'>
         <div className='ContainerRetiros'>
@@ -49,5 +53,3 @@ export default function InterfazRetiros() {
     </div>
   );
 }
-
-

@@ -3,12 +3,15 @@ import logo from '../../assets/logo5.png';
 import TopContainer from '../ContenedorSuperior/ContenedorSup';
 import './Prestamo.css';
 import { useNavigate } from 'react-router';
+import { useLocation } from 'react-router-dom';
 
 export default function SolicitudPrestamo() {
   const navigate = useNavigate();
   const [monto, setMonto] = useState('');
   const [plazo, setPlazo] = useState('');
   const [deuda, setDeuda] = useState(null);
+  const location = useLocation();
+  const { nombre, tipo, numero_cuenta } = location.state || {};
 
   const calcularDeuda = () => {
     const interes = 0.05; // Por simplicidad asumimos un interés fijo del 5% por el plazo
@@ -23,7 +26,7 @@ export default function SolicitudPrestamo() {
 
   return (
     <div>
-      <TopContainer />
+      <TopContainer nombre={nombre} tipo={tipo} numero_cuenta={numero_cuenta} />
       <div className='principalSolicitudPrestamo'>
         <div className='ContainerPrestamo'>
           <img src={logo} alt='Logo' className='logoSolicitudPrestamo' />

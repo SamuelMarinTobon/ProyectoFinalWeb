@@ -1,8 +1,12 @@
 import React from 'react';
 import TopContainer from '../ContenedorSuperior/ContenedorSup';
 import './Reportes.css';
+import { useLocation } from 'react-router-dom';
 
 const Reportes = () => {
+  const location = useLocation();
+  const { nombre, tipo, numero_cuenta } = location.state || {};
+
   const ingresosTotales = 5000;
   const egresosTotales = 3000;
   const deudasPendientes = 2000;
@@ -15,7 +19,7 @@ const Reportes = () => {
   ];
   return (
     <div>
-      <TopContainer />
+      <TopContainer nombre={nombre} tipo={tipo} numero_cuenta={numero_cuenta} />
       <div className='principalResportes'>
         <h1 className='tituloResumen'>RESUMEN DE REPORTES</h1>
 

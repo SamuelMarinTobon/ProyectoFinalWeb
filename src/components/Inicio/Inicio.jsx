@@ -4,25 +4,28 @@ import Fondo from '../../assets/fondo4.png';
 import Logo from '../../assets/logo4.png';
 import './inicio.css';
 import Sidebar from '../Sidebar/Sidebar';
+import { useLocation } from 'react-router-dom';
 import TopContainer from '../ContenedorSuperior/ContenedorSup';
+
 
 const inicio = () => {
   const navigate = useNavigate();
-  const [modalVisible, setModalVisible] = useState(false); // Estado para controlar el modal
-
-  // Función para abrir el modal
+  const [modalVisible, setModalVisible] = useState(false); 
+  const location = useLocation();
+  const { nombre, tipo, numero_cuenta } = location.state || {};
+  
   const openModal = () => {
     setModalVisible(true);
   };
 
-  // Función para cerrar el modal
+  
   const closeModal = () => {
     setModalVisible(false);
   };
 
   return (
     <div className='inicio-container'>
-      <TopContainer />
+      <TopContainer nombre={nombre} tipo={tipo} numero_cuenta={numero_cuenta} />
 
       <div className='inicio-content'>
         <div className='inicio-text'>
@@ -43,7 +46,6 @@ const inicio = () => {
         </div>
       </div>
 
-      {/* Modal para mostrar el mensaje flotante */}
       {modalVisible && (
         <div className='modal-overlay' onClick={closeModal}>
           <div className='modal-content' onClick={(e) => e.stopPropagation()}>

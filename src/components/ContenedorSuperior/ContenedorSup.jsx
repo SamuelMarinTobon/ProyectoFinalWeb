@@ -1,10 +1,42 @@
-import React from 'react';
-import './ContenedorSup.css'
-import Logo from '../../assets/logo5.png';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
+import Logo from '../../assets/logo5.png';
+import './ContenedorSup.css';
+import { useEffect } from 'react';
 
-const TopContainer = () => {
+const TopContainer = ({ nombre, tipo, numero_cuenta }) => {
   const navigate = useNavigate();
+  const [saldo1, setSaldo] = useState(0);
+  const [responseMessage, setResponseMessage] = useState('');
+
+  const obtenerSaldo = () => {
+    fetch('http://localhost:3000/saldo', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        numeroCuenta: numero_cuenta,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          setSaldo(data.saldo);
+        } else {
+          setResponseMessage(data.message);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        setResponseMessage('Error de red o problema en el servidor');
+      });
+  };
+
+   useEffect(() => {
+     obtenerSaldo();
+   }, [numero_cuenta]);
+
   return (
     <div>
       <div className='contenedorLogoInfo'>
@@ -13,16 +45,28 @@ const TopContainer = () => {
         </div>
         <div className='contenedorInfo2'>
           <h2 className='tituloTC'>TIPO DE CUENTA</h2>
-          <p className='tipoCuenta'>cuenta corriente</p>
+          <p className='tipoCuenta'>cuenta {tipo}</p>
         </div>
         <div className='contenedorInfo'>
-          <h2 className='nombre'>SAMUEL MARIN TOBON</h2>
-          <p className='balance'>Total en cuenta: $10,000.00</p>
+          <h2 className='nombre'>{nombre}</h2>
+          <p className='balance'>Total en cuenta: {saldo1}</p>
         </div>
       </div>
       <div className='contenedorBotonesContSup'>
         <div className='botonContSupMenu'>
-          <button onClick={() => navigate('/inicio')} className='botonContSup'>
+          <button
+            onClick={() =>
+              navigate('/inicio', {
+                state: {
+                  saldo: saldo1,
+                  nombre: nombre,
+                  tipo: tipo,
+                  numero_cuenta: numero_cuenta,
+                },
+              })
+            }
+            className='botonContSup'
+          >
             INICIO
           </button>
         </div>
@@ -30,13 +74,34 @@ const TopContainer = () => {
         <div className='botonContSupMenu'>
           <button className='botonContSup'>TRANSFERENCIAS</button>
           <div className='menuEmergente'>
-            <button onClick={() => navigate('/transferencia')} className='botonMenuEmergente'>
+            <button
+              onClick={() =>
+                navigate('/transferencia', {
+                  state: { saldo: saldo1, nombre: nombre, tipo: tipo, numero_cuenta: numero_cuenta },
+                })
+              }
+              className='botonMenuEmergente'
+            >
               Transferir
             </button>
-            <button onClick={() => navigate('/deposito')} className='botonMenuEmergente'>
+            <button
+              onClick={() =>
+                navigate('/deposito', {
+                  state: { saldo: saldo1, nombre: nombre, tipo: tipo, numero_cuenta: numero_cuenta },
+                })
+              }
+              className='botonMenuEmergente'
+            >
               Depositar
             </button>
-            <button onClick={() => navigate('/retiros')} className='botonMenuEmergente'>
+            <button
+              onClick={() =>
+                navigate('/retiros', {
+                  state: { saldo: saldo1, nombre: nombre, tipo: tipo, numero_cuenta: numero_cuenta },
+                })
+              }
+              className='botonMenuEmergente'
+            >
               Retirar
             </button>
           </div>
@@ -45,17 +110,38 @@ const TopContainer = () => {
         <div className='botonContSupMenu'>
           <button className='botonContSup'>PRESTAMOS</button>
           <div className='menuEmergente'>
-            <button onClick={() => navigate('/prestamos')} className='botonMenuEmergente'>
+            <button
+              onClick={() =>
+                navigate('/prestamos', {
+                  state: { saldo: saldo1, nombre: nombre, tipo: tipo, numero_cuenta: numero_cuenta },
+                })
+              }
+              className='botonMenuEmergente'
+            >
               Solicitar
             </button>
-            <button onClick={() => navigate('/deudas')} className='botonMenuEmergente'>
+            <button
+              onClick={() =>
+                navigate('/deudas', {
+                  state: { saldo: saldo1, nombre: nombre, tipo: tipo, numero_cuenta: numero_cuenta },
+                })
+              }
+              className='botonMenuEmergente'
+            >
               Consultar
             </button>
           </div>
         </div>
 
         <div className='botonContSupMenu'>
-          <button onClick={() => navigate('/reportes')} className='botonContSup'>
+          <button
+            onClick={() =>
+              navigate('/reportes', {
+                state: { saldo: saldo1, nombre: nombre, tipo: tipo, numero_cuenta: numero_cuenta },
+              })
+            }
+            className='botonContSup'
+          >
             REPORTES
           </button>
         </div>

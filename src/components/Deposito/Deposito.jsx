@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import logo from '../../assets/logo5.png';
 import './Deposito.css';
 import TopContainer from '../ContenedorSuperior/ContenedorSup';
+import { useLocation } from 'react-router-dom';
+
 
 export default function Deposito() {
+  const location = useLocation();
+  const { nombre, tipo, numero_cuenta } = location.state || {};
   const [monto, setMonto] = useState('');
 
   const movimientos = [
@@ -12,7 +16,7 @@ export default function Deposito() {
   ];
   return (
     <div>
-      <TopContainer />
+      <TopContainer nombre={nombre} tipo={tipo} numero_cuenta={numero_cuenta} />
 
       <div className='principalDepositos'>
         <div className='ContainerDepositos'>

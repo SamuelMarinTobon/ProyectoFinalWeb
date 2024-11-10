@@ -6,14 +6,14 @@ import './Home.css';
 
 const Home = () => {
   const navigate = useNavigate();
-  const [modalVisible, setModalVisible] = useState(false); // Estado para controlar el modal
+  const [modalVisible, setModalVisible] = useState(false);
 
-  // Función para abrir el modal
+  
   const openModal = () => {
     setModalVisible(true);
   };
 
-  // Función para cerrar el modal
+  
   const closeModal = () => {
     setModalVisible(false);
   };
@@ -53,7 +53,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Modal para mostrar el mensaje flotante */}
+      
       {modalVisible && (
         <div className='modal-overlay' onClick={closeModal}>
           <div className='modal-content' onClick={(e) => e.stopPropagation()}>

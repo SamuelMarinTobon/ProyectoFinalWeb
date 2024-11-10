@@ -1,22 +1,26 @@
 import React from 'react';
-import './Deudas.css'; 
+import { useLocation } from 'react-router-dom';
 import TopContainer from '../ContenedorSuperior/ContenedorSup';
+import './Deudas.css';
 
-const Deudas = () => { 
+const Deudas = () => {
+  const location = useLocation();
+  const { nombre, tipo, numero_cuenta } = location.state || {};
+
   const deudas = [
     {
       id: 1,
-      type: "Tarjeta de Crédito",
+      type: 'Tarjeta de Crédito',
       amount: 1500,
     },
     {
       id: 2,
-      type: "Préstamo Libre Destino",
+      type: 'Préstamo Libre Destino',
       amount: 3000,
     },
     {
       id: 3,
-      type: "Préstamo Hipotecario",
+      type: 'Préstamo Hipotecario',
       amount: 20000,
     },
   ];
@@ -25,13 +29,13 @@ const Deudas = () => {
     console.log(`Pago de cuota para deuda ID: ${id}`);
   };
 
-  const PagarTotal = (id) => { 
+  const PagarTotal = (id) => {
     console.log(`Pago total para deuda ID: ${id}`);
   };
 
   return (
     <div>
-      <TopContainer />
+      <TopContainer nombre={nombre} tipo={tipo} numero_cuenta={numero_cuenta} />
       <div className='contenedorDeudas'>
         <h1 className='tituloResumen'>PAGAR DEUDAS</h1>
         <div className='listaDeuda'>
@@ -57,4 +61,4 @@ const Deudas = () => {
   );
 };
 
-export default Deudas; 
+export default Deudas;
