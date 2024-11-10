@@ -54,6 +54,31 @@ export default function Transferencia() {
         'Corriente'
     ];
 
+    const realizarTransferencia = () => {
+      fetch('http://localhost:3000/transferencia', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+              numeroCuentaOrigen: numero_cuenta,
+              numeroCuentaDestino: numeroCuentaDestino,
+              monto: parseFloat(monto), 
+          }),
+      })
+      .then((response) => response.json())
+      .then((data) => {
+          if (data.success) {
+              setResponseMessage(data.message);
+          } else {
+              setResponseMessage(data.message);
+          }
+      })
+      .catch((error) => {
+          console.log(error);
+          setResponseMessage('Error de conexión con el servidor.');
+      });
+  };
     return (
       <div>
         <TopContainer nombre={nombre} tipo={tipo} numero_cuenta={numero_cuenta} />

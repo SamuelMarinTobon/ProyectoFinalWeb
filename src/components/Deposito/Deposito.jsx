@@ -13,6 +13,31 @@ export default function Deposito() {
   const movimientos = [
     { fecha: '2024-01-10', tipo: 'Deposito', monto: 1000, descripcion: 'Salario' },
 
+    const realizarDeposito = () => {
+      fetch('http://localhost:3000/deposito', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+              numeroCuenta: numero_cuenta,
+              monto: parseFloat(monto), 
+          }),
+      })
+      .then((response) => response.json())
+      .then((data) => {
+          if (data.success) {
+              setResponseMessage(data.message);
+          } else {
+              setResponseMessage(data.message);
+          }
+      })
+      .catch((error) => {
+          console.log(error);
+          setResponseMessage('Error de conexión con el servidor.');
+      });
+  };
+  
   ];
   return (
     <div>
