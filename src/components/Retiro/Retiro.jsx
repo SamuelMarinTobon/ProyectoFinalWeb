@@ -7,19 +7,20 @@ import './Retiro.css';
 export default function InterfazRetiros() {
   const location = useLocation();
   const { nombre, tipo, numero_cuenta } = location.state || {};
-
+  const [responseMessage, setResponseMessage] = useState('');
   const [monto, setMonto] = useState('');
+
   const movimientos = [{ fecha: '2024-01-10', tipo: 'Retiro', monto: 1000, descripcion: 'Salario' }];
 
   const realizarRetiro = () => {
-    fetch('http://localhost:3000/retiro', {
+    fetch('http://localhost:3000/retirar', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         numeroCuenta: numero_cuenta,
-        monto: parseFloat(monto), 
+        monto: parseFloat(monto),
       }),
     })
       .then((response) => response.json())
@@ -34,7 +35,7 @@ export default function InterfazRetiros() {
         console.log(error);
         setResponseMessage('Error de conexión con el servidor.');
       });
-};
+  };
 
   return (
     <div>
@@ -52,27 +53,10 @@ export default function InterfazRetiros() {
             onChange={(e) => setMonto(e.target.value)}
             required
           />
-          <button type='submit' className='BotonTransaccion'>
+          <button type='submit' className='BotonTransaccion' onClick={realizarRetiro}>
             Realizar
           </button>
-        </div>
-        <div className='HistorialRetiros'>
-          <h2 className='tituloHistorialRetiros'>Historial de Depositos</h2>
-          {movimientos.map((movimiento, index) => (
-            <div key={index} className='ElementoHistorialRetiro'>
-              <div className='DetalleMovimientoRetiro'>
-                <p className='DetalleMovimientoRetiro'>
-                  <strong>{movimiento.tipo}:</strong> {movimiento.descripcion}
-                </p>
-                <p className='DetalleMovimientoRetiro'>
-                  <strong>Fecha:</strong> {movimiento.fecha}
-                </p>
-                <p className='DetalleMovimientoRetiro'>
-                  <strong>Monto:</strong> ${movimiento.monto}
-                </p>
-              </div>
-            </div>
-          ))}
+          <p>{responseMessage}</p>
         </div>
       </div>
     </div>

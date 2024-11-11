@@ -96,8 +96,8 @@ const Deudas = () => {
       <TopContainer nombre={nombre} tipo={tipo} numero_cuenta={numero_cuenta} />
       <div className='contenedorDeudas'>
         <h1 className='tituloResumen'>PAGAR DEUDAS</h1>
+        <p>{responseMessage}</p>
         <div className='listaDeuda'>
-          <p>{responseMessage}</p>
           {deudas.map((deuda) => (
             <div key={deuda.prestamo_id} className='deudaItem'>
               <p>

@@ -1,24 +1,16 @@
-<<<<<<< HEAD
 import React, {useState,useEffect} from 'react';
 import './ContenedorSup.css'
 import Logo from '../../assets/logo5.png';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
 
-=======
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router';
-import Logo from '../../assets/logo5.png';
-import './ContenedorSup.css';
-import { useEffect } from 'react';
->>>>>>> de64261d00f7b50a5dad98399e943b590c676f61
 
 const TopContainer = ({ nombre, tipo, numero_cuenta }) => {
   const navigate = useNavigate();
 
   // Desde aqui
   const [balance, setBalance] = useState(10000);
-  const numeroCuenta = 'CUENTA001'; 
+  const numeroCuenta = numero_cuenta; 
 
   useEffect(() => {
     const obtenerBalance = async () => {
@@ -77,15 +69,8 @@ const TopContainer = ({ nombre, tipo, numero_cuenta }) => {
           <p className='tipoCuenta'>cuenta {tipo}</p>
         </div>
         <div className='contenedorInfo'>
-<<<<<<< HEAD
-          <h2 className='nombre'>SAMUEL MARIN TOBON</h2>
-          
-          {/* <p className='balance'>Total en cuenta: $1.000</p> */}
-          <p className='balance'>Total en cuenta: ${balance ? balance.toFixed(2) : '0.00'}</p>
-=======
           <h2 className='nombre'>{nombre}</h2>
           <p className='balance'>Total en cuenta: {saldo1}</p>
->>>>>>> de64261d00f7b50a5dad98399e943b590c676f61
         </div>
       </div>
       <div className='contenedorBotonesContSup'>

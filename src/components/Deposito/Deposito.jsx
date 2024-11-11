@@ -1,44 +1,42 @@
 import React, { useState } from 'react';
-import logo from '../../assets/logo5.png';
-import './Deposito.css';
-import TopContainer from '../ContenedorSuperior/ContenedorSup';
 import { useLocation } from 'react-router-dom';
-
+import logo from '../../assets/logo5.png';
+import TopContainer from '../ContenedorSuperior/ContenedorSup';
+import './Deposito.css';
 
 export default function Deposito() {
   const location = useLocation();
   const { nombre, tipo, numero_cuenta } = location.state || {};
   const [monto, setMonto] = useState('');
+  const [responseMessage, setResponseMessage] = useState('');
 
-  const movimientos = [
-    { fecha: '2024-01-10', tipo: 'Deposito', monto: 1000, descripcion: 'Salario' },
-
-    const realizarDeposito = () => {
-      fetch('http://localhost:3000/deposito', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-              numeroCuenta: numero_cuenta,
-              monto: parseFloat(monto), 
-          }),
-      })
+  const movimientos = [{ fecha: '2024-01-10', tipo: 'Deposito', monto: 1000, descripcion: 'Salario' }];
+ 
+  const realizarDeposito = () => {
+    fetch('http://localhost:3000/depositar', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        numeroCuenta: numero_cuenta,
+        monto: parseFloat(monto),
+      }),
+    })
       .then((response) => response.json())
       .then((data) => {
-          if (data.success) {
-              setResponseMessage(data.message);
-          } else {
-              setResponseMessage(data.message);
-          }
+        if (data.success) {
+          setResponseMessage(data.message);
+        } else {
+          setResponseMessage(data.message);
+        }
       })
       .catch((error) => {
-          console.log(error);
-          setResponseMessage('Error de conexión con el servidor.');
+        console.log(error);
+        setResponseMessage('Error de conexión con el servidor.');
       });
   };
-  
-  ];
+
   return (
     <div>
       <TopContainer nombre={nombre} tipo={tipo} numero_cuenta={numero_cuenta} />
@@ -56,27 +54,10 @@ export default function Deposito() {
             onChange={(e) => setMonto(e.target.value)}
             required
           />
-          <button type='submit' className='BotonTransaccion'>
+          <button type='submit' className='BotonTransaccion' onClick={realizarDeposito}>
             Realizar
           </button>
-        </div>
-        <div className='HistorialDepositos'>
-          <h2 className='tituloHistorialDepositos'>Historial de Depositos</h2>
-          {movimientos.map((movimiento, index) => (
-            <div key={index} className='ElementoHistorialDepositos'>
-              <div className='DetalleMovimiento'>
-                <p className='DetalleMovimiento'>
-                  <strong>{movimiento.tipo}:</strong> {movimiento.descripcion}
-                </p>
-                <p className='DetalleMovimiento'>
-                  <strong>Fecha:</strong> {movimiento.fecha}
-                </p>
-                <p className='DetalleMovimiento'>
-                  <strong>Monto:</strong> ${movimiento.monto}
-                </p>
-              </div>
-            </div>
-          ))}
+          <p>{responseMessage}</p>
         </div>
       </div>
     </div>
