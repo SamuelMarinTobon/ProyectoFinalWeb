@@ -1,10 +1,33 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import './ContenedorSup.css'
 import Logo from '../../assets/logo5.png';
 import { useNavigate } from 'react-router';
+import axios from 'axios';
+
 
 const TopContainer = () => {
   const navigate = useNavigate();
+
+  // Desde aqui
+  const [balance, setBalance] = useState(10000);
+  const numeroCuenta = 'CUENTA001'; 
+
+  useEffect(() => {
+    const obtenerBalance = async () => {
+      try {
+        const response = await axios.post('http://localhost:3000/balance', { numeroCuenta });
+        if (response.data.success) {
+          setBalance(response.data.balance);
+        }
+      } catch (error) {
+        console.error('Error al obtener el balance:', error);
+      }
+    };
+
+    obtenerBalance();
+  }, [numeroCuenta]);
+  // hasta aqui
+
   return (
     <div>
       <div className='contenedorLogoInfo'>
@@ -17,7 +40,9 @@ const TopContainer = () => {
         </div>
         <div className='contenedorInfo'>
           <h2 className='nombre'>SAMUEL MARIN TOBON</h2>
-          <p className='balance'>Total en cuenta: $10,000.00</p>
+          
+          {/* <p className='balance'>Total en cuenta: $1.000</p> */}
+          <p className='balance'>Total en cuenta: ${balance ? balance.toFixed(2) : '0.00'}</p>
         </div>
       </div>
       <div className='contenedorBotonesContSup'>
