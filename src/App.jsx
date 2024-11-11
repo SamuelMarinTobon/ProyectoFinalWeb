@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import Home from './components/Home/Home';
 import Ingreso from './components/Ingreso/Ingreso';
 import Deudas from './components/InfoDeudas/Deudas';
@@ -13,8 +12,10 @@ import Transferencia from './components/Transferencia/Transferencia';
 import Inicio from './components/Inicio/Inicio';
 
 function App() {
+  
   return (
     <Router>
+      
       <Routes>
         <Route path='/login' element={<Ingreso />} />
         <Route path='/' element={<Home />} />
